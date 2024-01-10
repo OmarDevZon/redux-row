@@ -69,3 +69,43 @@ export default {
 node >> don't forget restart your application
 
 ----------------------------------------------------------------
+### My file structure
+----src
+----|----component
+----|----|----layouts
+----|----|----ui
+----|----pages
+----|----routes
+----|----|----store.tsx
+----|----|----features
+----|----|----|----counterState.tsx
+----|----redux
+----|----utils
+----|----context
+----|----hooks
+
+----------------------------------------------------------------
+### Store 
+src/redux/store.tsx 
+1.  
+```bash
+import { configureStore } from '@reduxjs/toolkit'
+export const store = configureStore({
+  reducer: {},
+})
+```
+note >> don't forget connect store
+##### How can connect store in your application
+src/main.tsx
+1. 
+```bash 
+import {Provider} from "react-redux"
+import { store } from "./redux/store.tsx";
+```
+2. 
+```bash 
+ <Provider store={store}>
+    <App />
+  </Provider>
+```
+----------------------------------------------------------------
